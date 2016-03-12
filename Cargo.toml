@@ -1,0 +1,7 @@
+[package]
+name = "term-gfx"
+version = "0.1.0"
+
+[dependencies]
+stb_image = ">= 0.2.1"
+nalgebra = ">= 0.5.1"
