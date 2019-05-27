@@ -4,7 +4,7 @@ extern crate nalgebra as na;
 
 use stb_image::image;
 use std::path;
-use na::{Vector3};
+use crate::na::{Vector3};
 
 static ANSI_256: [u32; 256] = [
     // 8x standard colors
