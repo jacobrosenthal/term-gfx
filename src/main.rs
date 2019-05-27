@@ -95,7 +95,7 @@ fn rgbf_to_ansi256(col: RGBF, ansi16: bool) -> (i32, RGBF) {
         let col_ansi = rgb24_to_rgbf(col24);
         // TODO: Poor color distance function
         let diffc    = col - col_ansi;
-        let diff     = na::dot(&diffc, &diffc);
+        let diff     = diffc.dot(&diffc);
 
         if diff < best_diff {
             best_diff = diff;
@@ -261,7 +261,7 @@ fn main() {
                         let col_glyph = if glyph.1[pix_idx] { fg } else { bg };
                         // TODO: Poor color distance function
                         let diffc     = col_pix - col_glyph;
-                        diff += na::dot(&diffc, &diffc).sqrt();
+                        diff += diffc.dot(&diffc).sqrt();
                     }
 
                     // Best so far?
