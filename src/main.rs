@@ -4,7 +4,7 @@ extern crate nalgebra as na;
 
 use stb_image::image;
 use std::path;
-use na::{Vec3};
+use na::{Vector3};
 
 static ANSI_256: [u32; 256] = [
     // 8x standard colors
@@ -74,7 +74,7 @@ static GLYPHS: [(char, [bool; 4]); 15] = [
     ('▟', [false, true , true , true ])
 ];
 
-type RGBF = Vec3<f32>;
+type RGBF = Vector3<f32>;
 
 fn rgb24_to_rgbf(col: u32) -> RGBF {
     RGBF::new( ((col & 0xFF0000) >> 16) as f32 / 255.0
